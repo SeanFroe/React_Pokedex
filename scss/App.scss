@@ -1,0 +1,19 @@
+$primary_color: #ffab40;
+html {
+  height: 100%;
+  margin: 0;
+  background-color: $primary_color;
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically */
+}
+
+body {
+  background-color: #64b5f6;
+  border-radius: 20px;
+  border: 2px solid rgb(11, 72, 170);
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.5);
+}
+
+// .App {
+// }
