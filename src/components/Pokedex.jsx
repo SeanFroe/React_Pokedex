@@ -14,8 +14,8 @@ const Pokedex = ({ pokemon, exp, isWinner, isTie }) => {
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-header"> Pokedex </h1>
-      <div>
-        {pokemon.map((p) => (
+      <div className="Pokedex-cards">
+        {pokemon.map((p, index) => (
           <Pokecard
             key={p.id}
             id={p.id}
@@ -23,6 +23,7 @@ const Pokedex = ({ pokemon, exp, isWinner, isTie }) => {
             img={p.img}
             type={p.type}
             base_experience={p.base_experience}
+            index={index} // index is for animation delay
           />
         ))}
       </div>

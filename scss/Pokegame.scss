@@ -1,0 +1,14 @@
+// Layout for the hands (groups of cards)
+.Pokegame {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Styling for each hand */
+.Pokegame-hand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

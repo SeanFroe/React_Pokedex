@@ -1,29 +1,39 @@
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .Pokecard {
   display: inline-block;
-
   width: 8em;
   background-color: lightgray;
   border-radius: 10px;
   border: 1px solid black;
   box-shadow: 5px 4px 10px 3px rgba(15, 13, 171, 0.5);
   text-align: center;
-
   padding: 1em;
   margin: 1em;
-  transform: translateX(-50px); /* Start below the container */
-  animation: slideIn 1.5s ease-out forwards;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0; /* Start with hidden cards */
 }
-/* Keyframes for slide-in animation */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px); /* Start below */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End at its normal position */
-  }
+
+.Pokecard img {
+  width: 100px;
+  height: 100px;
 }
+
+.Pokedex-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .Pokecard-title {
   color: #effaff;
   font-weight: bold;

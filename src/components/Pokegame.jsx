@@ -16,22 +16,27 @@ const Pokegame = ({ pokemon }) => {
   const exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
 
   return (
-    <div>
-      <Pokedex
-        pokemon={hand1}
-        exp={exp1}
-        isWinner={exp1 > exp2}
-        isTie={exp1 === exp2}
-      />
-      <Pokedex
-        pokemon={hand2}
-        exp={exp2}
-        isWinner={exp2 > exp1}
-        isTie={exp1 === exp2}
-      />
+    <div className="Pokegame">
+      <div className="Pokegame-hand">
+        <Pokedex
+          pokemon={hand1}
+          exp={exp1}
+          isWinner={exp1 > exp2}
+          isTie={exp1 === exp2}
+        />
+      </div>
+      <div className="Pokegame-hand">
+        <Pokedex
+          pokemon={hand2}
+          exp={exp2}
+          isWinner={exp2 > exp1}
+          isTie={exp1 === exp2}
+        />
+      </div>
     </div>
   );
 };
+
 Pokegame.defaultProps = {
   pokemon: [
     { id: 4, name: "Charmander", type: "fire", base_experience: 62 },
