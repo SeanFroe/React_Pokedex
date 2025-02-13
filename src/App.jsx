@@ -1,12 +1,12 @@
 import pokemon from "./data/pokemon";
-import pokecard from "./components/Pokecard";
+import Pokedex from "./components/Pokedex";
 import "./App.css";
 
 function App() {
   return (
     <>
       <div>
-        <Pokedex />
+        <Pokedex pokemon={pokemon} />
       </div>
     </>
   );

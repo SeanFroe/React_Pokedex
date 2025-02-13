@@ -1,16 +1,20 @@
 import React from "react";
 
-const pokecard = ({ name, img, type, EXP }) => {
+const Pokecard = ({ id, name, type, base_experience }) => {
   return (
-    <div className="pokeCard">
-      <h3 className="pokeCard-name"> {name}</h3>
-      <img className="pokeCard-img" src={img} alt="" />
+    <div className="Pokecard">
+      <h3 className="Pokecard-name"> {name}</h3>
+      <img
+        className="Pokecard-img"
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+        alt={name}
+      />
       <ul>
         <li>Type: {type}</li>
-        <li>EXP: {EXP}</li>
+        <li>EXP: {base_experience}</li>
       </ul>
     </div>
   );
 };
 
-export default pokecard;
+export default Pokecard;
