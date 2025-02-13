@@ -5,13 +5,15 @@ const Pokegame = ({ pokemon }) => {
   let hand1 = [];
   let hand2 = [...pokemon];
 
-  while (hand1.length < hand2.length) {
-    //take a random pokemon from hand2, add to hand 1
+  // ensure each hand gets 4 cards
+  while (hand1.length < 4) {
     const randIdx = Math.floor(Math.random() * hand2.length);
     const randPokemon = hand2.splice(randIdx, 1)[0];
     hand1.push(randPokemon);
   }
 
+  //Remaining 4 Pokemon go to hand2 (ensuring always 4)
+  hand2 = hand2.slice(0, 4);
   const exp1 = hand1.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
   const exp2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
 
