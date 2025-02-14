@@ -1,34 +1,16 @@
-import React, { useState, useEffect } from "react";
 import Pokecard from "./Pokecard";
+import useDelayedExp from "./useDelayedExp";
 
 const Pokedex = ({ pokemon, exp, isWinner, isTie }) => {
   //
-  //
   //---------------------- TIMER EFFECTS ---------------------------------------------
+  const { currentExp, showResults } = useDelayedExp(pokemon);
 
-  const [currentExp, setCurrentExp] = useState(0);
-  const [showResults, setShowResults] = useState(false); // Controls win/tie message visability
-
-  useEffect(() => {
-    const delay = 600; // Start with a small delay for first card
-
-    pokemon.forEach((p, cardIdx) => {
-      setTimeout(() => {
-        setCurrentExp((prevExp) => prevExp + p.base_experience);
-      }, delay * (cardIdx + 1));
-    });
-
-    //Delay showing win/tie message until after card appears
-    setTimeout(() => {
-      setShowResults(true);
-    }, delay * pokemon.length + 500); //Extra delay after last card
-  }, [pokemon]);
+  //------------------------ Win Conditions ---------------------------------------------
 
   let winMessage = null;
   let tieMessage = null;
-  //-------------------------------------------------------------------------------------
-  //
-  //------------------------ Win Conditions ---------------------------------------------
+
   if (isWinner) {
     winMessage = <p className="Pokedex-winner"> THIS HAND WINS!</p>;
   }
