@@ -35,6 +35,21 @@ const Pokegame = ({ pokemon }) => {
           isTie={exp1 === exp2}
         />
       </div>
+      {/* Winning card animation
+      {exp1 > exp2 && (
+        <img
+          className="Winning-card fly-in-hand1"
+          src="winning_card_image.png"
+          alt="Winning Card"
+        />
+      )}
+      {exp2 > exp1 && (
+        <img
+          className="Winning-card fly-in-hand2"
+          src="winning_card_image.png"
+          alt="Winning Card"
+        />
+      )} */}
     </div>
   );
 };

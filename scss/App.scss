@@ -9,6 +9,13 @@ html {
 }
 
 body {
+  position: relative; /* Ensures animations don't affect layout */
+  width: 100%;
+  max-width: 800px; /* Set a max width so it doesn’t expand */
+  height: 1000px; /* Fixed height */
+  overflow: hidden; /* Prevent expansion */
+  margin: 0 auto;
+
   background-color: #64b5f6;
   border-radius: 20px;
   border: 2px solid rgb(11, 72, 170);

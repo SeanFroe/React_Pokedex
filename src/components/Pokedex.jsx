@@ -22,6 +22,13 @@ const Pokedex = ({ pokemon, exp, isWinner, isTie }) => {
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-header"> Pokedex </h1>
+
+      {showResults && (
+        <>
+          {winMessage}
+          {tieMessage}
+        </>
+      )}
       <div className="Pokedex-cards">
         {pokemon.map((p, index) => (
           <Pokecard
@@ -35,14 +42,7 @@ const Pokedex = ({ pokemon, exp, isWinner, isTie }) => {
           />
         ))}
       </div>
-
       <h4 className="Pokedex-exp-total">Total experience: {currentExp}</h4>
-      {showResults && (
-        <>
-          {winMessage}
-          {tieMessage}
-        </>
-      )}
     </div>
   );
 };
