@@ -5,7 +5,7 @@ const POKE_API =
   "PokeAPI/sprites/master/sprites/pokemon/";
 
 // Induvidual Pokemon Card
-const Pokecard = ({ id, name, type, base_experience, index }) => {
+const Pokecard = ({ id, name, type, base_experience }) => {
   const imgSrc = `${POKE_API}${id}.png`;
 
   return (
